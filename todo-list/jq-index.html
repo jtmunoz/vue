@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+	<div class="container">
+		<h2>My Shopping List</h2>
+<!-- 		<div class="input-group">
+			<input type="text" placeholder="add shopping list item" class="js-new-item form-control">
+			<span class="input-group-btn">
+				<button @click="addItem" class="js-add btn btn-default" type="button">Add!</button>
+			</span>
+		</div>
+
+		<ul>
+			<li>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="js-item" name="list">Carrot
+					</label>
+				</div>
+			</li>
+			<li>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="js-item" name="list">Book
+					</label>
+				</div>
+			</li>
+			<li>
+				<div class="removed">
+					<label>
+						<input type="checkbox" class="js-item" name="list" checked> Gift for Aunt's Birthday
+					</label>
+				</div>
+			</li>
+		</ul> -->
+		<div class="footer">
+			<hr>
+			<em>Change the title of your shopping list here</em>
+			<input type="text" class="js-change-title" value="My Shopping List">
+		</div>
+	</div>
+
+	<style>
+		.container {
+			width:40%;
+			margin: 20px auto 0px auto;
+		}
+
+		.removed {
+			color: gray;
+		}
+
+		.removed label{
+			text-decoration: line-through;
+		} 
+
+		ul li {
+			list-style-type: none;
+		}
+	</style>
+	
+	<script>
+		$(document).ready(function(){
+
+			// function onAdd() {
+			// 	var $ul, li $li, $label, $div, value;
+			// 	value = $('.js-new-item').val();
+			// 	if (value === '') {
+			// 		return;
+			// 	}
+			// 	$ul = $('ul');
+			// 	$li = $('<li>').appendTo($ul);
+			// 	$div = $('<div>').addClass('checkbox').appendTo($li);
+			// 	$label = $('<label>').appendTo($div);
+			// 	$('<input>').attr('type', 'checkbox').addClass('item').attr('name', 'list').click(toggleRemoved).appendTo($label);
+			// 	$label.append(value);
+			// 	$('.js-new-item').val('');
+			// }
+
+			// function toggleRemoved(ev) {
+			// 	var $el;
+
+			// 	$el = $(ev.currentTarget);
+			// 	$el.closest('li').toggleClass('removed');
+			// }
+
+			// $('.js-add').click(onAdd);
+			// $('.js-item').click(toggleRemoved);
+			
+			function onChangeTitle(){
+				$('h2').text($('.js-change-title').val());
+			};
+
+			$('.js-change-title').keyup(onChangeTitle);
+
+		});
+	</script>
+
+</body>
+</html>
