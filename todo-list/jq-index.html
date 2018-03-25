@@ -13,7 +13,7 @@
 	
 	<div class="container">
 		<h2>My Shopping List</h2>
-<!-- 		<div class="input-group">
+		<div class="input-group">
 			<input type="text" placeholder="add shopping list item" class="js-new-item form-control">
 			<span class="input-group-btn">
 				<button @click="addItem" class="js-add btn btn-default" type="button">Add!</button>
@@ -42,7 +42,7 @@
 					</label>
 				</div>
 			</li>
-		</ul> -->
+		</ul>
 		<div class="footer">
 			<hr>
 			<em>Change the title of your shopping list here</em>
@@ -72,30 +72,30 @@
 	<script>
 		$(document).ready(function(){
 
-			// function onAdd() {
-			// 	var $ul, li $li, $label, $div, value;
-			// 	value = $('.js-new-item').val();
-			// 	if (value === '') {
-			// 		return;
-			// 	}
-			// 	$ul = $('ul');
-			// 	$li = $('<li>').appendTo($ul);
-			// 	$div = $('<div>').addClass('checkbox').appendTo($li);
-			// 	$label = $('<label>').appendTo($div);
-			// 	$('<input>').attr('type', 'checkbox').addClass('item').attr('name', 'list').click(toggleRemoved).appendTo($label);
-			// 	$label.append(value);
-			// 	$('.js-new-item').val('');
-			// }
+			function onAdd() {
+				var $ul, li, $li, $label, $div, value;
+				value = $('.js-new-item').val();
+				if (value === '') {
+					return;
+				}
+				$ul = $('ul');
+				$li = $('<li>').appendTo($ul);
+				$div = $('<div>').addClass('checkbox').appendTo($li);
+				$label = $('<label>').appendTo($div);
+				$('<input>').attr('type', 'checkbox').addClass('item').attr('name', 'list').click(toggleRemoved).appendTo($label);
+				$label.append(value);
+				$('.js-new-item').val('');
+			}
 
-			// function toggleRemoved(ev) {
-			// 	var $el;
+			function toggleRemoved(ev) {
+				var $el;
 
-			// 	$el = $(ev.currentTarget);
-			// 	$el.closest('li').toggleClass('removed');
-			// }
+				$el = $(ev.currentTarget);
+				$el.closest('li').toggleClass('removed');
+			}
 
-			// $('.js-add').click(onAdd);
-			// $('.js-item').click(toggleRemoved);
+			$('.js-add').click(onAdd);
+			$('.js-item').click(toggleRemoved);
 			
 			function onChangeTitle(){
 				$('h2').text($('.js-change-title').val());
