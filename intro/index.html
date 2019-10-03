@@ -5,8 +5,26 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Lynda Training</title>
 	<link rel="stylesheet" href="">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.1/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.1/js/uikit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.1/js/uikit-icons.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
+	<div id="app">
+		<h2>{{ name }}</h2>
+	</div>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				name: 'Bamboo Thermal Ski Coat'
+			}
+		});
+	</script>
 	
 </body>
 </html>
