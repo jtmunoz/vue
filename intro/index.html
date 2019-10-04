@@ -5,8 +5,33 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Lynda Training</title>
 	<link rel="stylesheet" href="">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.1/css/uikit.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.1/js/uikit.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.1/js/uikit-icons.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
+	<div id="app">
+		<h2>{{ name }}</h2>
+		<p> {{ description }}</p>
+		<div class="uk-h2">$ {{ price }}</div>
+		<img :src="image" alt="">
+	</div>
+	<script>
+		var data = {
+		  "name": "Bamboo Thermal Ski Coat",
+		  "description": "You'll be the most environmentally conscious skier on the slopes - and the most stylish - wearing our fitted bamboo thermal ski coat, made from organic bamboo with recycled plastic down filling.",
+		  "image": "https://hplussport.com/wp-content/uploads/2016/12/ski-coat_LYNDA_29940.jpg",
+		  "price": 99
+		}
+		var app = new Vue({
+			el: '#app',
+			data: data
+		});
+	</script>
 	
 </body>
 </html>
