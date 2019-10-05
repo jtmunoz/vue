@@ -4,21 +4,23 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Lynda Training</title>
-	<link rel="stylesheet" href="">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.1/css/uikit.css" />
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" integrity="sha256-5YtK9j+Nl/245lAkSjrIs600d6edKTevi+3JYdjuHhY=" crossorigin="anonymous" />
 	<!-- UIkit JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.1/js/uikit.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.1/js/uikit-icons.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" integrity="sha256-rhLALrRmAQVu/OxzVDpQaiHAEMxiRSN8h8RDydUEh2g=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js" integrity="sha256-p2Y38iAB/pU4dGRY5eWPrWcPR4XwRDtQqxO9yoFTtF0=" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<div id="app">
 		<h2>{{ name }}</h2>
 		<p> {{ description }}</p>
-		<div class="uk-h2">$ {{ price }}</div>
-		<img :src="image" alt="">
+		<p class="uk-h2">$ {{ price }}</p>
+		<img :src="image" alt="" class="∏">
 	</div>
 	<script>
 		var data = {
