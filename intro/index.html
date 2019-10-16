@@ -17,83 +17,35 @@
 </head>
 <body>
 	<div id="app">
-		<nav class="uk-navbar-container" uk-navbar v-if="cart.length>0">
+		<nav class="uk-navbar-container" uk-navbar>
 			<div class="uk-navbar-right">
-				<b>cart:</b>
-				<a href="" class="uk-icon-button">{{ cart.length }}</a>
 			</div>
 		</nav>
-		<div class="uk-container">		
-			<div class="uk-width-1-1@s">
-				<form action="">
-					<label for="formMax" class="uk-text-bold">Max</label>
-					<input id="formMax" type="text" class="uk-input uk-width-1-4@s uk-form-small" v-model="maximum">
-				</form>
-				<input type="range" class="uk-range" min="0" max="200" v-model="maximum">
-			</div>
-			<div v-for="item in products">
-				<div v-if="item.price<=Number(maximum)">
-					<div uk-grid>
-						<div class="uk-width-1-3@m uk-text-center">
-							<img :src="item.image" :alt="item.name" class="uk-align-center uk-margin-small-bottom">
-							<button class="uk-button uk-button-default" v-on:click="addItem(item)"> + </button>		
-						</div>
-						<div class="uk-width-2-3@m">
-							<h2>{{ item.name }}</h2>
-							<p> {{ item.description }}</p>
-							<p class="uk-h2">$ {{ Number(item.price) }}</p>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div class="uk-container">
+			<p>
+				<strong>Bound:</strong>
+				<br>
+				<span>{{ name }}</span>
+			</p>		
+			<p>
+				<strong>Parsed:</strong>
+				<br>
+				<span v-html="name"></span>
+			</p>			
+			<p>
+				<strong>Unchangeable:</strong>
+				<br>
+				<span v-once>{{ name }}</span>
+			</p>
+			<h5>Text</h5>
+			<textarea class="uk-textarea" v-model="name" ></textarea>
 		</div>
 	</div>
 	<script>
-		// var data = {
-		// 	maximum : 200,
-		// 	products : [
-		// 		{
-		// 			"id": "532",
-		// 			"name": "Slicker Jacket",
-		// 			"description": "Wind and rain are no match for our organic bamboo slicker jacket for men and women. Triple stitched seams, zippered pockets, and a stay-tight hood are just a few features of our best-selling jacket.",
-		// 			"price": "125",
-		// 			"image_title": "slicker-jacket_lynda_29941",
-		// 		"image": "https://hplussport.com/wp-content/uploads/2016/12/slicker-jacket_LYNDA_29941.jpg"
-		// 		},
-		// 		{
-		// 			"id": "530",
-		// 			"name": "Bamboo Thermal Ski Coat",
-		// 			"description": "You'll be the most environmentally conscious skier on the slopes - and the most stylish - wearing our fitted bamboo thermal ski coat, made from organic bamboo with recycled plastic down filling.",
-		// 			"price": "99",
-		// 			"image": "https://hplussport.com/wp-content/uploads/2016/12/ski-coat_LYNDA_29940.jpg"
-		// 		},
-		// 		{
-		// 			"id": "516",
-		// 			"name": "Unisex Thermal Vest",
-		// 			"description": "Our thermal vest, made from organic bamboo with recycled plastic down filling, is a favorite of both men and women. You'll help the environment, and have a wear-easy piece for many occasions.",
-		// 			"price": "95",
-		// 			"image": "https://hplussport.com/wp-content/uploads/2016/12/unisex-thermal-vest_LYNDA_29944.jpg"
-		// 		}
-		//  	]
-		// }
 		var app = new Vue({
 			el: '#app',
 			data: {
-				maximum: 99,
-				products: null,
-				cart: []
-			},
-			methods: {
-				addItem: function(product) {
-					this.cart.push(product);
-				}
-			},
-			mounted: function() {
-				fetch('https://hplussport.com/api/products/order/price')
-				.then( response => response.json())
-				.then( data => {
-					this.products = data;
-				})
+				name: "Fluffy Ski Cout"
 			}
 		});
 	</script>
