@@ -24,10 +24,10 @@
 			</div>
 		</nav>
 		<div class="uk-container">		
-			<div class="uk-width-1-1@s">
+			<div class="uk-width-1-1@s uk-align-center" :class="sliderState">
 				<form action="">
 					<label for="formMax" :class="labelArr">Max</label>
-					<input id="formMax" type="text" class="uk-input uk-width-1-4@s uk-form-small" :style="{'width':'60px', 'text-align':'center'}" v-model="maximum">
+					<input id="formMax" type="text" class="uk-input uk-width-1-4@s uk-form-small" :style="{'width': inputWidth, textAlign:'center'}" v-model="maximum">
 					<input type="range" class="uk-range" min="0" max="200" v-model="maximum">
 				</form>
 			</div>
@@ -52,10 +52,17 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
+				inputWidth: '60px',
+				sliderStatus: true,
 				maximum: 99,
 				products: null,
 				cart: [],
 				labelArr: ['uk-text-bold']
+			},
+			computed: {
+				sliderState: function () {
+					return this.sliderStatus ? 'uk-display-flex' : 'uk-display-none'
+				}
 			},
 			methods: {
 				addItem: function(product) {
