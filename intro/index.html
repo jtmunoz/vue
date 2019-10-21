@@ -26,13 +26,13 @@
 		<div class="uk-container">		
 			<div class="uk-width-1-1@s">
 				<form action="">
-					<label for="formMax" class="uk-text-bold">Max</label>
-					<input id="formMax" type="text" class="uk-input uk-width-1-4@s uk-form-small" v-model="maximum">
+					<label for="formMax" :class="labelArr">Max</label>
+					<input id="formMax" type="text" class="uk-input uk-width-1-4@s uk-form-small" :style="{'width':'60px', 'text-align':'center'}" v-model="maximum">
+					<input type="range" class="uk-range" min="0" max="200" v-model="maximum">
 				</form>
-				<input type="range" class="uk-range" min="0" max="200" v-model="maximum">
 			</div>
-			<div v-for="item in products">
-				<div v-if="item.price<=Number(maximum)">
+			<div v-for="item in products" 
+				v-if="item.price<=Number(maximum)">
 					<div uk-grid>
 						<div class="uk-width-1-3@m uk-text-center">
 							<img :src="item.image" :alt="item.name" class="uk-align-center uk-margin-small-bottom">
@@ -44,7 +44,7 @@
 							<p class="uk-h2">$ {{ Number(item.price) }}</p>
 						</div>
 					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -54,7 +54,8 @@
 			data: {
 				maximum: 99,
 				products: null,
-				cart: []
+				cart: [],
+				labelArr: ['uk-text-bold']
 			},
 			methods: {
 				addItem: function(product) {
