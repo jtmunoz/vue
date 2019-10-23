@@ -17,12 +17,15 @@
 </head>
 <body>
 	<div id="app">
-		<nav class="uk-navbar-container" uk-navbar v-if="cart.length>0">
-			<div class="uk-navbar-right">
+		<nav class="uk-navbar-container" uk-navbar >
+			<div class="uk-navbar-right uk-flex">
+				<button class="uk-button uk-button-secondary uk-button-small"></button>
 				<b>cart:</b>
-				<a href="" class="uk-icon-button">{{ cart.length }}</a>
+				<a href="" class="uk-icon-button uk-background-primary uk-margin-small">{{ cart.length }}</a>
 			</div>
 		</nav>
+
+		<h1>My Shop</h1>
 		<div class="uk-container">		
 			<div class="uk-width-1-1@s uk-align-center" :class="sliderState">
 				<form action="">
@@ -53,7 +56,7 @@
 			el: '#app',
 			data: {
 				inputWidth: '60px',
-				sliderStatus: true,
+				sliderStatus: false,
 				maximum: 99,
 				products: null,
 				cart: [],
@@ -61,7 +64,7 @@
 			},
 			computed: {
 				sliderState: function () {
-					return this.sliderStatus ? 'uk-display-flex' : 'uk-display-none'
+					return this.sliderStatus ? 'uk-flex' : 'uk-hidden'
 				}
 			},
 			methods: {
