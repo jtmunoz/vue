@@ -19,14 +19,16 @@
 	<div id="app">
 		<nav class="uk-navbar-container" uk-navbar >
 			<div class="uk-navbar-right uk-flex">
-				<button class="uk-button uk-button-secondary uk-button-small"></button>
-				<b>cart:</b>
-				<a href="" class="uk-icon-button uk-background-primary uk-margin-small">{{ cart.length }}</a>
+				<button class="uk-button uk-button-default uk-button-small" @click="sliderStatus = !sliderStatus"><span uk-icon="icon: credit-card"></span></button>
+				<div class="uk-margin-small-left uk-padding-small" v-if="cart.length>0">
+					<b>cart:</b>
+					<a href="" class="uk-icon-button uk-background-primary uk-margin-small" style="color:#fff;">{{ cart.length }}</a>		
+				</div>
 			</div>
 		</nav>
 
-		<h1>My Shop</h1>
-		<div class="uk-container">		
+		<div class="uk-container uk-padding-small">		
+			<h1>My Shop</h1>
 			<div class="uk-width-1-1@s uk-align-center" :class="sliderState">
 				<form action="">
 					<label for="formMax" :class="labelArr">Max</label>
